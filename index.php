@@ -2,7 +2,7 @@
 include_once('Class/sqlite.php');
 
 // Instanciamos la clase en la variable DB
-$db = new SQLite3('dbAgenda.db') or die('Unable to open database');
+$db = new SQLite3('dbAgenda.db') or die('No se ha podido conectar a la base de datos.');
 
 // Query para obtener los datos
 $query =<<<sql
@@ -10,7 +10,7 @@ SELECT * FROM citas;
 sql;
 
 // Ejecutamos el query
-$result = $db->query('SELECT * FROM citas') or die('Query failed');
+$result = $db->query('SELECT * FROM citas') or die('Fallo el Query');
 
 ?>
 
@@ -37,8 +37,15 @@ $result = $db->query('SELECT * FROM citas') or die('Query failed');
 </div>
 
 <div class="container ">
-    <div class="row justify-content-md-center">
 
+    <div class="row justify-content-md-center">
+        <div class="col col-md-12">
+            <a href="#" class="btn btn-success" id="btnNuevaCita" style="width:100%"><i class="fas fa-plus"></i> Registrar nueva cita</a>
+        </div>
+    </div>
+
+
+    <div class="row justify-content-md-center">
     <?php while ($row = $result->fetchArray()){ ?>
 
         <div class="col col-md-3 m-3">
@@ -47,13 +54,12 @@ $result = $db->query('SELECT * FROM citas') or die('Query failed');
                 <div class="card-body">
                     <h5 class="card-title"><?= $row['NOMBRE'] ?></h5>
                     <p class="card-text"><?= $row['NOTA'] ?></p>
-                    <a href="#" class="btn btn-danger col col-md-12"><i class="fas fa-trash"></i></a>
+                    <a href="#?<?= $row['id'] ?>" id="btnDelete" class="btn btn-danger col col-md-12"><i class="fas fa-trash"></i></a>
                 </div>
             </div>
         </div>
 
     <?php }; ?>
-
     </div>
 </div>
 
@@ -62,5 +68,7 @@ $result = $db->query('SELECT * FROM citas') or die('Query failed');
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="Assets/js/scripts.js"></script>
 </body>
 </html>
