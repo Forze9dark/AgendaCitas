@@ -1,0 +1,2 @@
+
+02/10/2000-No se ha podido procesar el query que esta en el archivo sqlite.php
