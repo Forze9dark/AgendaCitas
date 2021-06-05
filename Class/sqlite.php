@@ -1,5 +1,5 @@
 <?php 
-include_once("functions.php");
+include_once("../functions.php");
 
 // Class SQLITE con el nombre dbAgenda.db para la base de datos local
 class SqliteDatabase extends SQLite3 {
