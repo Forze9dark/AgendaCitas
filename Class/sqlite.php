@@ -17,7 +17,6 @@ if(!$db){
 }
 
 // Creacion de tablas necesarias en la base de datos
-
 // TABLA CITAS
 $query =<<<sql
 CREATE TABLE if not exists citas

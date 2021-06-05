@@ -6,3 +6,7 @@ function generar_log($fecha, $error_message){
     fwrite($logFile, "\n".$fecha . "-" . $error_message) or die("Error escribiendo en el archivo");
     fclose($logFile);
 }
+
+function registrar_nueva_cita(){
+    
+}
