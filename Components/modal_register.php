@@ -8,28 +8,26 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Guardar Cita</button>
-      </div>
+      <form action="registrar_cita.php" method="POST">
+        <div class="modal-body">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Nombre Completo</label>
+              <input type="text" class="form-control" name="pa_nombre" id="pa_nombre" aria-describedby="panameHelp" placeholder="Nombre del Paciente">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Fecha</label>
+              <input type="date" class="form-control" name="pa_fecha" id="pa_fecha" placeholder="Fecha">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Nota</label>
+              <textarea class="form-control" name="pa_notas" id="pa_notas" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <input type="submit" class="btn btn-primary" value="Guardar Cita">
+        </div>
+      </form>
     </div>
   </div>
 </div>
