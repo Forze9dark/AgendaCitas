@@ -1,3 +1,3 @@
 # AgendaCitas
 
-Practica de SQLite en PHP en una pequeña practica de agendar citas. (Aun en desarollo)
+Agendador de Citas basico, practica basica de php para reforzamiento de habilidades, registro y eliminacion de citas con base de datos local (SQLite). Incluye un poco de javascript (jquery).
