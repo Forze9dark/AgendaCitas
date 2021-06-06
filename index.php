@@ -52,7 +52,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><?= $row['NOMBRE'] ?></h5>
                         <p class="card-text"><?= $row['NOTA'] ?></p>
-                        <a href="#?<?= $row['id'] ?>" id="btnDelete" class="btn btn-danger col col-md-12"><i class="fas fa-trash"></i></a>
+                        <a href="eliminar_cita.php?id=<?= $row['id'] ?>" id="btnDelete" class="btn btn-danger col col-md-12"><i class="fas fa-trash"></i></a>
                     </div>
                 </div>
             </div>
